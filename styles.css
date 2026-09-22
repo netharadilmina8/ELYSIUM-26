@@ -987,12 +987,12 @@ footer.in{opacity:1;transform:none}
 
 .explore-grid-three .explore-card:hover::after { opacity: 1; }
 
-.explore-story { background: linear-gradient(180deg, rgba(5,18,31,.05), rgba(5,18,31,.86)), url('assets/story-card.jpg') center / cover; }
-.explore-schedule { background: linear-gradient(180deg, rgba(5,18,31,.05), rgba(72,9,24,.78)), url('assets/venue/grand-hemalie-lobby.jpg') center / cover; }
+.explore-story { background: linear-gradient(180deg, rgba(5,18,31,.05), rgba(5,18,31,.86)), url('story-card.jpg') center / cover; }
+.explore-schedule { background: linear-gradient(180deg, rgba(5,18,31,.05), rgba(72,9,24,.78)), url('grand-hemalie-lobby.jpg') center / cover; }
 .explore-venue {
   background:
     linear-gradient(180deg, rgba(5,18,31,.05), rgba(5,18,31,.76)),
-    url('assets/venue/grand-hemalie-entrance.jpg') center / cover;
+    url('grand-hemalie-entrance.jpg') center / cover;
 }
 
 .explore-grid-three .num {
@@ -1451,18 +1451,3 @@ body:not(.home-page) .nav-links a.nav-cta{color:#fff8e9;}
   background:linear-gradient(90deg, transparent, var(--highlight));
 }
 .page-hero .eyebrow::after{transform:scaleX(-1);}
-html {
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
