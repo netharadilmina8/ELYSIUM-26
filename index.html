@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ELYSIUM '26 — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="meanderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B4C2F"/>
+      <stop offset="45%" stop-color="#F1AD6F"/>
+      <stop offset="75%" stop-color="#FBDF9A"/>
+      <stop offset="100%" stop-color="#8B4C2F"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="assets/school-crest.png" alt="MRCM crest"><span>ELYSIUM'26</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="venue.html">Venue</a></li>
+    <li><a href="register.html" class="nav-cta">Register</a></li>
+  </ul>
+</nav>
+
+<div class="stars" aria-hidden="true"></div>
+<div class="petals" id="petals" aria-hidden="true"></div>
+<div class="curtain left" aria-hidden="true"></div>
+<div class="curtain-gold left" aria-hidden="true"></div>
+<div class="curtain right" aria-hidden="true"></div>
+<div class="curtain-gold right" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero reference-hero" id="home">
+  <div class="hero-backdrop" aria-hidden="true"></div>
+  <div class="hero-side-shape hero-side-left" aria-hidden="true"></div>
+  <div class="hero-side-shape hero-side-right" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="reference-crest">
+      <img src="assets/school-crest.png" alt="Mahinda Rajapaksha College crest">
+    </div>
+
+    <div class="school-name reference-school-name">
+      <span>MAHINDA RAJAPAKSHA COLLEGE · MATARA</span>
+      <small>2023 O/L ~ 2026 A/L BATCH</small>
+    </div>
+
+    <div class="hero-divider reference-divider"><span></span><i></i><span></span></div>
+    <p class="eyebrow reference-eyebrow">MRCM '26 GET TOGETHER</p>
+
+    <h1>ELYSIUM <span>'26</span></h1>
+
+    <p class="tagline reference-tagline">A Paradise of Memories,<br><em>A Reunion for Eternity.</em></p>
+
+    <div class="reference-meta">
+      <div>
+        <small>DATE</small>
+        <strong>27 OCTOBER 2026</strong>
+        <span>TUESDAY</span>
+      </div>
+      <div>
+        <small>VENUE</small>
+        <strong>GRAND HEMALIE HOTEL</strong>
+        <span>KAMBURUGAMUWA</span>
+      </div>
+      <div>
+        <small>TIME</small>
+        <strong>9.30 AM ONWARDS</strong>
+        <span>ONE DAY · ONE FAMILY</span>
+      </div>
+    </div>
+
+    <div class="reference-actions">
+      <a href="register.html" class="reference-primary">RESERVE YOUR PLACE <span>↗</span></a>
+      <a href="#explore" class="reference-secondary">DISCOVER ELYSIUM <span>↓</span></a>
+    </div>
+
+    <div class="hero-footer-line reference-footer-line">ONCE MRCM · ALWAYS FAMILY</div>
+  </div>
+</header>
+
+<!-- ============ EXPLORE ============ -->
+<section class="explore" id="explore">
+  <div class="wrap reveal-stagger">
+    <div class="schedule-head reveal" style="opacity:1;transform:none;">
+      <p class="kicker">Find Your Way</p>
+      <h2>Explore Elysium</h2>
+    </div>
+    <div class="explore-grid explore-grid-three">
+      <a href="about.html" class="explore-card explore-story"><span class="num">01</span><div class="explore-card-bottom"><span class="mini-label">THE STORY</span><h3>STORY.</h3><p>The halls, friendships and memories that shaped our journey.</p><span class="go">Read our story →</span></div></a>
+      <a href="schedule.html" class="explore-card explore-schedule"><span class="num">02</span><div class="explore-card-bottom"><span class="mini-label">THE DAY</span><h3>SCHEDULE.</h3><p>A day of reunion, memories, celebration and new beginnings.</p><span class="go">View the schedule →</span></div></a>
+      <a href="venue.html" class="explore-card explore-venue"><span class="num">03</span><div class="explore-card-bottom"><span class="mini-label">THE VENUE</span><h3>VENUE.</h3><p>Grand Hemalie Hotel, Kamburugamuwa — the setting for our reunion.</p><span class="go">Explore the venue →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="laurel" viewBox="0 0 200 90" aria-hidden="true" style="margin:0 auto 22px;">
+      <g fill="none" stroke="#F1AD6F" stroke-width="2" stroke-linecap="round">
+        <path d="M100 82 C 70 78, 30 60, 18 24 C 30 34, 44 40, 56 38"/>
+        <path d="M100 82 C 130 78, 170 60, 182 24 C 170 34, 156 40, 144 38"/>
+      </g>
+    </svg>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="venue.html">Venue</a>
+      <a href="register.html">Register</a>
+    </nav>
+    <p class="org">Organized by the <b>2023 O/L</b> &amp; <b>2026 A/L</b> Batch</p>
+    <p class="credit">ELYSIUM '26 &nbsp;&mdash;&nbsp; A Paradise of Memories, A Reunion for Eternity</p>
+    <div class="footer-bar">PEOPLE &nbsp;|&nbsp; MEMORIES &nbsp;|&nbsp; ONCE MRCM &nbsp;|&nbsp; ALWAYS FAMILY</div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
