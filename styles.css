@@ -1451,3 +1451,18 @@ body:not(.home-page) .nav-links a.nav-cta{color:#fff8e9;}
   background:linear-gradient(90deg, transparent, var(--highlight));
 }
 .page-hero .eyebrow::after{transform:scaleX(-1);}
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
