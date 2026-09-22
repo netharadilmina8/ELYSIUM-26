@@ -1451,3 +1451,47 @@ body:not(.home-page) .nav-links a.nav-cta{color:#fff8e9;}
   background:linear-gradient(90deg, transparent, var(--highlight));
 }
 .page-hero .eyebrow::after{transform:scaleX(-1);}
+
+/* Hide the browser scrollbar so no bright vertical gutter/line appears on the right. */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Final scrollbar/gutter fix */
+html {
+  background: #0A0407 !important;
+  color-scheme: dark;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+html::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  display: none !important;
+}
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track-piece,
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track-piece,
+body::-webkit-scrollbar-thumb {
+  width: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  display: none !important;
+}
+body {
+  background-color: #0A0407 !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
