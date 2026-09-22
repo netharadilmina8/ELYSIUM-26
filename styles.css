@@ -108,10 +108,24 @@
     display:flex; align-items:center; justify-content:space-between;
     padding: 18px max(28px, 6vw);
     background: rgba(10,4,7,0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(241,173,111,0.12);
     transition: background 0.35s ease, border-color 0.35s ease, padding 0.35s ease;
+  }
+  /* The frosted-glass blur lives on this ::before layer rather than on
+     .navbar itself. backdrop-filter (like transform/filter) creates a new
+     containing block for any position:fixed descendant — since .nav-links
+     (the mobile off-canvas menu) is a fixed child of .navbar, having the
+     filter directly on .navbar caused the menu to anchor itself to the
+     navbar's own (inset, pill-shaped) box instead of the real viewport,
+     leaving a sliver of its background visibly peeking past the edge of
+     the screen even while "closed". Isolating the blur to ::before keeps
+     the identical visual effect without turning .navbar into that anchor. */
+  .navbar::before{
+    content:""; position:absolute; inset:0; z-index:-1;
+    border-radius:inherit;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    pointer-events:none;
   }
   .navbar.scrolled{
     background: rgba(10,4,7,0.82);
@@ -1064,6 +1078,9 @@ footer.in{opacity:1;transform:none}
   border-radius:32px;
   background:rgba(245,243,236,.93);
   box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+.home-page .navbar::before{
+  border-radius:32px;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
 }
@@ -1292,6 +1309,9 @@ body:not(.home-page) .navbar{
   border-radius:32px;
   background:rgba(245,243,236,.93);
   box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+body:not(.home-page) .navbar::before{
+  border-radius:32px;
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
 }
@@ -1452,46 +1472,71 @@ body:not(.home-page) .nav-links a.nav-cta{color:#fff8e9;}
 }
 .page-hero .eyebrow::after{transform:scaleX(-1);}
 
-/* Hide the browser scrollbar so no bright vertical gutter/line appears on the right. */
-html, body {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+/* =========================================================
+   ELYSIUM '26 — VIEWPORT / SCROLLBAR FIX
+   Rather than trying to hide the native scrollbar (unreliable —
+   some browsers, e.g. Brave/Opera with their own scrollbar
+   skins, ignore width:0 and fall back to a plain white gutter),
+   we RECOLOR it to match the site so it can never render white,
+   whether it ends up shown or not.
+   ========================================================= */
+html,
+html:root {
+  background-color: #07101a !important;
+  scrollbar-color: #d4a93e #0c1622 !important; /* thumb, track */
+  scrollbar-width: thin !important;
 }
 
 html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 11px !important;
+  height: 11px !important;
 }
 
-/* Final scrollbar/gutter fix */
-html {
-  background: #0A0407 !important;
-  color-scheme: dark;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-html::-webkit-scrollbar {
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-  display: none !important;
-}
 html::-webkit-scrollbar-track,
 html::-webkit-scrollbar-track-piece,
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar,
 body::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track-piece,
-body::-webkit-scrollbar-thumb {
-  width: 0 !important;
-  background: transparent !important;
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track-piece {
+  background: #0c1622 !important;
   border: 0 !important;
-  display: none !important;
+  box-shadow: none !important;
 }
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a93e, #a37a21) !important;
+  border: 2px solid #0c1622 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f4d58d, #d4a93e) !important;
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-corner {
+  background: #0c1622 !important;
+}
+
 body {
-  background-color: #0A0407 !important;
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Never let an emulated/mobile viewport inherit a light canvas. */
+@media (max-width: 760px) {
+  html,
+  body {
+    background-color: #07101a !important;
+  }
 }
